@@ -68,31 +68,7 @@ def student():
    con.close()
    return render_template('/student.html',students=students)
 
-# @app.route("/uptoda", methods = ['POST', 'GET'])
-# def uptoda():
-#    con = sqlite3.connect('data/database.db')
-#    cur = con.cursor()
-#    if request.method == 'POST':
-#          rowid = request.form['id']
-#          name = request.form['name']
-#          age = request.form['age']
-#          gen = request.form['gender']
-#          mar = request.form['major']
-#          try:
-#             cur.execute("UPDATE students SET (name, age, gender, marjor, rowid) VALUES (?,?,?,?,?)",(name, age, gen, mar, rowid))
-#             con.commit()
-#          except:
-#             con.rollback()
-#             msg = "Error in the INSERT"
-#          finally:
-#             # Send the transaction message to result.html
-#             cur.close()
-#    cur = con.cursor()
-#    cur.execute("SELECT rowid, * FROM students")
-#    students = cur.fetchall()
-#    cur.close()
-#    con.close()
-#    return render_template('/student.html',students=students)
+
 
 @app.route("/dele", methods = ['POST', 'GET'])
 def dele():
